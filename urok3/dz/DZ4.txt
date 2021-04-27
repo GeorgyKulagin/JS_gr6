@@ -1,6 +1,9 @@
 Видео урока:
 https://www.youtube.com/watch?v=IzlEXaq9TIE
 
+Код с урока:
+https://github.com/AlekseyHarima/JS_gr6
+
 Выполнить задания из прикрепленного файла.
 Запрос данных от пользователя можно выполнить при помощи функции prompt() Следующим образом:
 let name = prompt("Введите ваше имя")
