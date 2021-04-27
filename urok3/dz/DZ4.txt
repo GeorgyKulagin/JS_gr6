@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=AC3a1nRqV7U&feature=youtu.be
+https://www.youtube.com/watch?v=J9CCfVelQeY&feature=youtu.be
+
+Выполнить задания из прикрепленного файла.
+Запрос данных от пользователя можно выполнить при помощи функции prompt() Следующим образом:
+let name = prompt("Введите ваше имя")
+
+Любое введенное значение будет типа string, помните про это если хотите ввести число
