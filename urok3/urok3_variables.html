@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Переменные и типы данных</title>
+</head>
+<body>
+
+<!-- БЛОК 1. Инициализация переменных, консоль и конкатенация/интерполяция -->
+<script>
+    // способы объявления переменных (операторы)
+    a = 'global variable'; // не самый лучший вариант объявлени переменной
+    var b = 'глобально, но внутри скрипта'; // стараться использовать только в исключительных ситуация, когда let и const не подходят
+
+    let c = 'учитывается область видимости'; // можно смело использовать в тех ситуациях, когда значение в переменную будет перезаписываться
+
+    const d = 'не изменяемое значение'; // можно использовать в тех ситуациях, когда в скрипте значение переменной меняться не должно
+
+    // Так делать нельзя:
+    // d = 56348753;
+
+    // console.log(a, b, c, d);
+    console.log('Вывод значения переменной a:', a);
+
+    // КОНКАТЕНАЦИЯ - сложение строк через оператор +
+    console.log('Вывод значения переменной a: ' + a + b + c + d);
+    console.log('Вывод значения переменной a: ' + a + ' ' + b + ' ' + c + ' ' + d); // плохой вариант!
+
+    // ИНТЕРПОЛЯЦИЯ - Формируем строку с подстановкой значений из переменных. Аналог конкатенации без использования +
+    console.log(`Вывод значения переменных: ${a} ${b} ${c} ${d}`);
+
+    // alert(d);
+</script>
+
+
+<!-- БЛОК 2. Типы данных и фиксированные значения -->
+<script>
+    // ТД number (число)
+    let num = 65;
+    let num1 = 43.75;
+    let num2 = -1.001;
+
+    // ТД string (строка)
+    let str1 = 'Sample text';
+    let str2 = "Sample text";
+    let str3 = '35';
+    let str4 = "35";
+
+    // ТД boolean (логический)
+    let bool1 = true; // истина
+    let bool2 = false; // ложь
+
+    // ТД array (массив)
+    // Примечание: при typeof будет object
+    let ar1 = []; // пустой массив
+    let ar2 = ['Elem1', 'Elem2', 'Elem3'];
+    let ar3 = ['Elem1', 54, true, '54', false];
+    console.log(ar3[4]);
+
+    // ТД object (объект)
+    let obj1 = {
+        'student1': 'Ilia',
+        'student2': 'Alex',
+        'student3': 'Sabina'
+    };
+    let obj2 = {
+        4: 'Georgiy',
+        5: 'Vitaliy',
+        'phones': {
+            1: '+74623468234',
+            'AhmedPhone': '+53453453454'
+        }
+    };
+
+    console.log(obj2["4"]);
+    console.log(obj2.phones);
+    console.log(obj2.phones.AhmedPhone);
+
+
+    // определить тип переменной в программе typeof(x) или typeof x
+    console.log(typeof bool1); // boolean
+    console.log(typeof ar2); // object
+    console.log(typeof (obj1)); // object
+    console.log(typeof (str1)); // string
+    console.log(typeof (num1)); // number
+
+    // фиксированные значения
+    let empty = null; // означает, что переменная проинициализирована, но значение в ней нет
+    console.log('empty', empty);
+    console.log(typeof empty); // object
+
+    let empty2; // объявил, но не проиниц.
+    console.log(empty2); // undefined
+    console.log(typeof empty2); // undefined
+    let empty3 = undefined; // так можно сделать, но это весьма странно. Ибо мы определям переменную неопределенностью
+
+
+    let err1 = 'Hello' / 4;
+    console.log('err1', err1); // NaN - ошибка вычисления
+</script>
+
+
+<!-- БЛОК 3. Операторы -->
+<script>
+    // Унарные операторы и Бинарные операторы
+    // Операнд - какой-то объект, переменная, функция
+
+    // Унарные операторы работаю с одним операндом
+    // Бинарные операторы работают с двумя операндами
+    // Тернарный оператор работает с тремя операндами
+
+    let b3Num1 = 5, b3Num2 = 10;
+    // Бинарные операторы
+    console.log(b3Num1 + b3Num2); // плюс
+    console.log(b3Num1 - b3Num2); // минус
+    console.log(b3Num1 * b3Num2); // умножение
+    console.log(b3Num1 / b3Num2); // деление
+    console.log(2 / 3); // 0,6666666 деление
+    console.log(b3Num1 ** b3Num2); // возведение в степень
+    console.log(Math.pow(b3Num1, b3Num2)); // возведение в степень
+    console.log(2 % 3); // 2, остаток от деления
+    console.log(3 % 2); // 1, остаток от деления
+
+    // пример унарного +
+    b3Num3 = '3';
+    console.log(5 + b3Num3); // 53
+    console.log(5 + +b3Num3); // 8, приобразуем из строки в число
+    console.log(5 + Number(b3Num3)); // 8, приобразуем из строки в число
+
+    // Функция prompt(), позволяет ввести значение. Возвращает STRING
+    let b3Num4 = +prompt('Введите первое число');
+    let b3Num5 = Number(prompt('Введите второе число'));
+    alert(b3Num4 + b3Num5);
+
+
+    // СПОСОБЫ ИНИЦИАЛИЗАЦИИ ПРЕМЕННЫХ!!!!!!
+</script>
+</body>
+</html>
