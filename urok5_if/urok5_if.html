@@ -33,7 +33,7 @@
     // }
 
     // пример с выводом на страницу
-    // if(+prompt('Какой сейчас год') === 2021)
+    // if(+prompt('Какой сейчас год?') === 2021)
     //     document.write('<h1 style="color: red;">Вы абсолютно правы</h1>');
     // else
     //     document.write('<h1>Проспитесь, либо вы из будущего или прошлого</h1>');
@@ -45,20 +45,33 @@
     // 2) Что блоки истины/лжи не могут быть пропущены
     // +prompt('Какой сейчас год') === 2021 ? document.write('<h1 style="color: red;">Вы абсолютно правы</h1>') : document.write('<h1>Проспитесь, либо вы из будущего или прошлого</h1>');
 
-
-
     // Пример на ввод пароля:
-    const checkAdmin = confirm('Вы админ?'); // confirm откроет окошечко с вариантами Да/Нет. При выборе Да - вернется true, при Нет - false
-    if(checkAdmin) {
-        let password = prompt('Введите пароль');
-        password === 'imbatman' ?
-            alert('Будьте как дома, мистер Вейн') :
-            alert('Пароль не верен')
-    } else {
-        alert('Нечего вам тут делать!');
-    }
-
-
+    // const checkAdmin = confirm('Вы админ?'); // confirm откроет окошечко с вариантами Да/Нет. При выборе Да - вернется true, при Нет - false
+    // if(checkAdmin) {
+    //     let password = prompt('Введите пароль');
+    //     password === 'imbatman' ?
+    //         alert('Будьте как дома, мистер Вейн') :
+    //         alert('Пароль не верен')
+    // } else {
+    //     alert('Нечего вам тут делать!');
+    // }
 </script>
+
+
+<!-- БЛОК 2. Логические операторы -->
+<script>
+    // Логическое ИЛИ ||
+
+
+//    Non-null assertion
+    let a = null;
+    let b = "";
+    let c = 42;
+    console.log(a ?? "default a"); // default a
+    console.log(b ?? "default b"); // "" (так как пустая строка не null или undefined)
+    console.log(c ?? 42); // 42
+</script>
+
+
 </body>
 </html>
