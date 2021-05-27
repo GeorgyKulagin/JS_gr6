@@ -43,9 +43,95 @@
     console.log(students.pop()); // Алексей
     console.log(students); // ["Мухамед", "Евгений", "Денис", "Настя", "Илья", "Сергей"]
 
-    // метод push() - добавить в конец массива
+    // метод push() - добавить в конец массива элемент/элементы
     console.log(students.push("Алексей")); // 7, возвращена длина массива после добавления
     console.log(students); // ["Мухамед", "Евгений", "Денис", "Настя", "Илья", "Сергей", "Алексей"]
+
+    // метод shift() - метод удаления первого элемента массива
+    console.log(students.shift()); // Мухамеда
+    console.log(students); // ["Евгений", "Денис", "Настя", "Илья", "Сергей", "Алексей"]
+
+    // метод unshift() - метод добавления в начало массива
+    console.log(students.unshift('Мухамед')); // 7, возвращена длина массива после добавления
+    console.log(students); // ["Мухамед", "Евгений", "Денис", "Настя", "Илья", "Сергей", "Алексей"]
+
+    // метод join() - преобразует массив в строку, через указанный разделитель
+    students = students.join(';');
+    console.log(typeof students); // string
+    console.log(students); // Мухамед;Евгений;Денис;Настя;Илья;Сергей;Алексей
+
+    // метод split() - преобразует строку в массив, по разделителю
+    students = students.split(';');
+    console.log(typeof students); // object
+    console.log(students); // ["Мухамед", "Евгений", "Денис", "Настя", "Илья", "Сергей", "Алексей"]
+
+    // оператор  delete - позволяет удалить элемент массива по индексу, НО на месте удаленного элемента останется empty(дыра)
+    delete students[4]; // удаляем Илья
+    console.log(students); // ["Мухамед", "Евгений", "Денис", "Настя", empty, "Сергей", "Алексей"]
+    console.log(students[4]); // undefined
+
+    // метод slice(begin, end) - возвращает участок массива от begin до end, не включая end
+    // исходный массив при этом не меняется
+    // slice() можно использовать для создания копии массива
+    let copyStudents = students.slice(); // создаст копию массива
+    console.log('copyStudents', copyStudents); // ["Мухамед", "Евгений", "Денис", "Настя", empty, "Сергей", "Алексей"]
+    copyStudents[0] = 'Илья'; // не будет влиять на массив students
+    console.log('copyStudents', copyStudents); // ["Илья", "Евгений", "Денис", "Настя", empty, "Сергей", "Алексей"]
+    console.log('students', students); // ["Мухамед", "Евгений", "Денис", "Настя", empty, "Сергей", "Алексей"]
+
+    let students2 = students; // ТАК ЛУЧШЕ НЕ ДЕЛАТЬ!!!! ПРИЧИНА: при изменении students2, будет изменяться и массив students и наоборот.
+    console.log('students2', students2); // ["Мухамед", "Евгений", "Денис", "Настя", empty, "Сергей", "Алексей"]
+    students2[0] = 'Виталий';
+    console.log(students2); // ["Виталий", "Евгений", "Денис", "Настя", empty, "Сергей", "Алексей"]
+    console.log(students); // ["Виталий", "Евгений", "Денис", "Настя", empty, "Сергей", "Алексей"]
+
+    // let cutStudents = students.slice(1, 3);
+    // console.log(cutStudents); // ["Евгений", "Денис"]
+    // console.log(students); // ["Мухамед", "Евгений", "Денис", "Настя", empty, "Сергей", "Алексей"]
+    // let name = students.slice(-1); // вернет Алексей
+    // console.log(name); // Алексей
+    // let names = students.slice(-3, -1);
+    // let names2 = students.slice(-1, -3);
+    // console.log(names); // [empty, "Сергей", "Алексей"]
+    // console.log(names2); // []
+
+    // на данном этапе students = ["Виталий", "Евгений", "Денис", "Настя", empty, "Сергей", "Алексей"]
+
+    // метод splice(start[, deleteCount[, item1[, item2[, ...]]]) - позволяет удалять, добавлять, заменять элементы - по очереди или одновременно
+    // Меняет исходный массив и возвращает его
+    // Пример с удалением:
+    students.splice(1, 1); // удалим Евгений
+    console.log(students); // ["Виталий", "Денис", "Настя", empty, "Сергей", "Алексей"]
+
+    // Пример с заменой. Заменим первые два элемента на другие
+    students.splice(0, 2, 'Илья', 'Евгений');
+    console.log(students); // ["Илья", "Евгений", "Настя", empty, "Сергей", "Алексей"]
+
+    // Добавить данные без удаления после второго индекса
+    students.splice(2, 0, ...['Денис', 'Виталий']); // ... SPREAD (т.е. по сути сделаем 'Денис', 'Виталий')
+    console.log(students); // ["Илья", "Евгений", "Денис", "Виталий", "Настя", empty, "Сергей", "Алексей"]
+
+    // метод reverse() - переворачивает массив, меняя исходный
+    students.reverse();
+    console.log(students); // ["Алексей", "Сергей", empty, "Настя", "Виталий", "Денис", "Евгений", "Илья"]
+
+    // метод sort() - сортировка массива (по убыванию/возрастанию)
+    students.sort(); // по возрастанию
+    console.log(students); // ["Алексей", "Виталий", "Денис", "Евгений", "Илья", "Настя", "Сергей", empty]
+
+    // метод concat() - объединение массивов
+    let studentsGroup5 = ['Светлана'];
+    let concatStudents = students.concat(studentsGroup5);
+    console.log(concatStudents); // ["Алексей", "Виталий", "Денис", "Евгений", "Илья", "Настя", "Сергей", empty, "Светлана"]
+    console.log(students); // ["Алексей", "Виталий", "Денис", "Евгений", "Илья", "Настя", "Сергей", empty]
+
+    // concat() через spread (...)
+    let spreadConcat = [...students, ...studentsGroup5];
+    console.log(spreadConcat); // ["Алексей", "Виталий", "Денис", "Евгений", "Илья", "Настя", "Сергей", undefined, "Светлана"]
+
+    // slice() через spread (...) - копия массива
+    let copySpreadStudents = [...students];
+    console.log(copySpreadStudents); // ["Алексей", "Виталий", "Денис", "Евгений", "Илья", "Настя", "Сергей", undefined, "Светлана"]
 
 </script>
 
