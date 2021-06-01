@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map, filter, foreach</title>
+</head>
+<body>
+<!--Блок1 Перебирающие методы массива-->
+<script>
+    // foreach()- выполняет callback для каждого элемента в массиве единажды
+    // Общий синтаксис для перебирающх методо:
+    // массив метод(function callback(текущий элемент, индикс текущего элемента, исходный массив){
+    // тело callback, в котором что то происходит с итерируемыми элементам массива;
+    // })
+    //Не стоит пытаться остановить выполнение перебирающих методов (break continue) если нужно делать не полный обход массива то лучше использовать for. white. for...of
+    //for...in
+
+    // Пример с foreach()
+    // ['Autumn', 'Winter', 'Spring', 'Summer'].forEach((elem, index, array) => {
+    //     console.log(`array[${index}]=${elem}`);
+    //     console.log(array);
+    // });
+
+    // пример с map() - используется для перебора и создания нового массива с callback
+    // let langs = ['C++', 'JS', 'Java'];
+    // let newLangs = langs.map(x => x.length);
+    // console.log(newLangs);//[3,2,4]
+    //
+
+    // Пример с filter() - используется для отсеивания элементов перебираемого массива Создает новый массив с элементами прошедшими проверку
+    // Если в условиях итерации ничего не подошло то вернеться пустой массив
+    // let nums = [1, -1, 2, -2, 3];
+    // let positiveArray = nums.filter(x => x > 0);
+    // console.log(positiveArray); // [1,2,3]
+
+</script>
+<!--Блок 2 Работа с массивами объекта-->
+<script>
+    // const cities = [
+    //     {name: 'Moscow', population: 1053454},
+    //     {name: 'St. Peterburg', population: 4991547},
+    //     {name: 'Novosibirsk', population: 1511544},
+    //     {name: 'Omsk', population: 99999},
+    //     {name: 'Berdsk', population: 103000},
+    // ];
+
+    //Задача получить массив городов миллиоников
+
+    // 2 Подхода:
+    // императивный - отвеает на вопрос "Как?" способ написания программы с последовательно подробный описания решения Часто при таком подходе создаются лишние переменный
+    // декларативный - способ написания программы с последовательно подробный описания решения Часто при таком подходе создаются лишние переменный который на целен выполнения без пошаговой инстрекции
+
+
+    // Решения задачи императивна:
+    // const millionPlusCities = [];
+    // for(let i = 0; i < cities.length; i++) {
+    //     if (cities[i].population >= 1000000) {
+    //         millionPlusCities.push(cities[i].name)
+    //     }
+    // }
+    // console.log(millionPlusCities);
+
+    // Решения задачи декларативна
+    // const millionPlusCities = cities.filter(x => x.population >= 1000000).map(x => x.name);
+    // console.log(millionPlusCities);
+
+    // Задача Поиск чуствительный к регистру
+    // let search = cities.filter(x => x.name.includes('sk'));
+    // console.log(search);
+
+   
+
+</script>
+</body>
+</html>
