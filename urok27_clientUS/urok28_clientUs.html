@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client JS</title>
+</head>
+<body>
+<!--<input type="button" value="Ткни меня" onclick="alert('Привет Настя'); alert('Еще раз привет Настя')">-->
+
+<!--<button ondblclick="pressF()">Я буду работать через функцию</button>-->
+<!--<script>-->
+<!--function pressF() {-->
+<!--    console.log('На меня много давят');-->
+<!--}-->
+<!--</script>-->
+<!--Основные ивенты-->
+<!--onclick - произведен клик кнопкой мыши на эхлемент-->
+<!--onmouseover- указатель мыши находится внутри области отображения элемента-->
+<!--onkeydown - нажата кнопка на клавиатуре-->
+<!--onkeypress - кнопка клавиатуре нажата и не отпускается долше чем интеррвал повторения Длительность интервала повторения является системным параментром и зависит от настроек операционной сиссемы пользователя-->
+<!--onkeyup - отпущена ранее нажатая кнопка-->
+
+<!--onchange - элемент теряет фокус ввода а содержимое элемента изменилось за время пока элемент был в фокусе
+onselect- какая то часть текста внутри элемента становится выделенной
+onsubmit - в форме нажата кнопка "Отправить" но отправка формы на сервер еще не производилось
+onblur- элемент управления теряет фокус ввода тк курсор переходит к другому элементу
+onfocus - отображаемый элемент получил фокус ввода Для текстовых полей это событие означает что курсор уже находится в данном элементе
+onload -завершена загрузка страницы
+onunload - производится выход из документа
+onscroll-  срабатывает при прокрутке элемента-->
+
+
+<!--Блок 2 Поиск элементов на странице -->
+<input type="text" value="Hi" id="test">
+<input type="button" onclick="f()" value="Press">
+
+
+<vl class="test-list">
+    <li>Lorem ipsum dolor.</li>
+    <li>Impedit, libero, necessitatibus?</li>
+    <li>Doloribus, neque voluptatibus.</li>
+    <li>Architecto, ex quis!</li>
+    <li>Blanditiis, incidunt, voluptates.</li>
+    <li>Architecto, cupiditate, expedita?</li>
+</vl>
+<script>
+    function f(){
+        // let elem = document.getElementById('test');// ищим элемент с id = test
+        // alert(elem.value);// HI получаем значение отребутики value
+        // alert(elem.id);
+        // elem.value = 'Nastya Hello'; // меняем текст в инпуте
+
+        // универсальный поиск по селектору (как в css)
+        let elem = document.querySelector('#test');
+        elem.value = 'Меня нашли!';
+
+
+        let elemsList = document.querySelector('.test-list>li');
+        elemsList.innerHTML = 'Hi Anastasia'; // поменяем текст ТОЛЬКО в первом элементе списка Потому что querySelector возращает первый найденный элемент
+        //Для того чтобы получить коллекцию данных (пример все li)  нужно использовать querySelectorAll()
+    }
+</script>
+</body>
+</html>

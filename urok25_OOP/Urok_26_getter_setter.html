@@ -9,17 +9,36 @@
 </head>
 <body>
 <script>
-    class Person {
-        constructor(firstName, lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-        }
-        getFullName() {
-            return `${this.firstName} ${this.lastName}`;
-        }
-    }
-    const georgy = new Person('Georgy', 'Kulagin');
-    alert(georgy.getFullName());
+    // class Person {
+    //     constructor(firstName, lastName) {
+    //         this.firstName = firstName;
+    //         this.lastName = lastName;
+    //         this.gender = null; //приватное поле
+    //     }
+    //     // getter(Возвращаемый) - свойство которы инициализируется ключ get Используетч\ для получения значения (т.е. в нем обязательно исп. оператора return) Число исп. для возвращения значения приватного свойства
+    //     get gender(){
+    //         return this._gender;
+    //     }
+    //     // Сеттер - свойство позволяющее установить значение приватного свойства переменная в параметре является обязательной
+    //     set gender(value){
+    //         if (value === 'male' || value === 'female') {
+    //         this._gender = value;
+    //         } else{
+    //             console.log('Можно выбрать только Мужской или Женский пол');
+    //         }
+    //     }
+    //
+    //     getFullName() {
+    //         return `${this.firstName} ${this.lastName}`;
+    //     }
+    // }
+    // const georgy = new Person('Georgy', 'Kulagin');
+    // console.log(georgy.gender);
+    // georgy.gender = 'HDD'; // устанавливаем значения в приватное свойсчтво через геттер
+    // console.log(georgy.gender);// null, вызываем геттер
+    // georgy.gender = 'male'; // еще раз уставаливаем значения через геттер
+    // console.log(georgy.gender);
+    // console.log(georgy.getFullName());
 </script>
 </body>
 </html>
