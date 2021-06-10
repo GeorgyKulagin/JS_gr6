@@ -31,8 +31,19 @@ onscroll-  срабатывает при прокрутке элемента-->
 
 
 <!--Блок 2 Поиск элементов на странице -->
-<input type="text" value="Hi" id="test">
-<input type="button" onclick="f()" value="Press">
+<!--<input type="text" value="Hi" id="test">-->
+<!--<input type="button" onclick="f()" value="Press">-->
+
+<!--<input type="button" value="0" class="clicker" onclick="bthClicker(this)">-->
+<!--&lt;!&ndash;this - объект контекста если передовать его в качестве параментра в функцию то мы напрямую без поиска querySelector ит п можем менять параметры тега&ndash;&gt;-->
+<!--&lt;!&ndash; debugger- запускается отладку программы при открытой консоли с точки вызова самого debugger&ndash;&gt;-->
+<!--<script>-->
+<!--    function bthClicker(params) {-->
+<!--        debugger;-->
+<!--        console.log(params.getAttribute('value'));-->
+<!--        params.value++;-->
+<!--    }-->
+<!--</script>-->
 
 
 <vl class="test-list">
@@ -44,21 +55,49 @@ onscroll-  срабатывает при прокрутке элемента-->
     <li>Architecto, cupiditate, expedita?</li>
 </vl>
 <script>
-    function f(){
+    // function f(){
         // let elem = document.getElementById('test');// ищим элемент с id = test
         // alert(elem.value);// HI получаем значение отребутики value
         // alert(elem.id);
         // elem.value = 'Nastya Hello'; // меняем текст в инпуте
 
         // универсальный поиск по селектору (как в css)
-        let elem = document.querySelector('#test');
-        elem.value = 'Меня нашли!';
+        // let elem = document.querySelector('#test');
+        // elem.value = 'Меня нашли!';
 
 
-        let elemsList = document.querySelector('.test-list>li');
-        elemsList.innerHTML = 'Hi Anastasia'; // поменяем текст ТОЛЬКО в первом элементе списка Потому что querySelector возращает первый найденный элемент
+        // let elemsList = document.querySelector('.test-list>li');
+        // elemsList.innerHTML = 'Hi Anastasia'; // поменяем текст ТОЛЬКО в первом элементе списка Потому что querySelector возращает первый найденный элемент
         //Для того чтобы получить коллекцию данных (пример все li)  нужно использовать querySelectorAll()
-    }
+
+        // const ul = document.querySelectorAll('.test-list>li');
+        // let counter = 0;
+        // for (const ulElement of ul) {
+        //     ulElement.innerHTML = `New element ${++counter}`;
+        // }
+
+
+    // }
 </script>
+
+
+
+<!--Задача Блокирование поллей ввода
+Создать две кнопки и текстовое поле
+Одная конопка блокирует ввод а другая разблокирует -->
+<input type="text" value="Поле" id="text">
+<input type="button" value="Block" onclick="Block()">
+<input type="button"  value="UnBlock" onclick="UnBlock()">
+
+<script>
+let Block = a =>{
+    a = document.getElementById('text').disabled = true;
+}
+let UnBlock = b =>{
+    b = document.getElementById('text').disabled = false;
+}
+</script>
+
+
 </body>
 </html>
