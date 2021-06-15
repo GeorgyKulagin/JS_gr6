@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setTimeOut</title>
+</head>
+<body>
+<!-- Блок1 Таймеры - метод setInterval() и setTimeOut()
+setInterval() - Запускает функцию через определенный промежуток времнию Принимат два аргумента 1 - callback 2- количество
+миллисекунд (1000мс = 1с) Минимальное значение 10мс-->
+<script>
+    // function timer() {
+    //     document.write('Time<br>');
+    // }
+    // setInterval(timer, 1000);
+
+    //ороткая версия
+    // setInterval(() => document.write('Timer<br>'), 1000);
+</script>
+
+<!-- Блок2 Вызов остановка таймера по нажатию кнопки-->
+<!--<input type="button" value="Запустить таймер" id="start">-->
+<!--<input type="button" value="Остановить таймер" id="stop">-->
+<!--<script>-->
+<!--    let startTimer = document.querySelector('#start');-->
+<!--    let stopTimer = document.querySelector('#stop');-->
+<!--    let i = 0-->
+<!--    let timerId = null;-->
+
+<!--    startTimer.addEventListener('click', () => {-->
+<!--        timerId = setInterval(() => console.log(++i),200)-->
+<!--        console.log('TIMER №' + timerId);-->
+<!--    });-->
+<!--    stopTimer.addEventListener('click', () => {-->
+<!--        // for (let j = timerId; j !==0; j&#45;&#45; ) {-->
+<!--        //     clearInterval(j);-->
+<!--        // }-->
+<!--       while(timerId) clearInterval(timerId&#45;&#45;);-->
+<!--    })-->
+<!--</script>-->
+
+<!--Блок 3 setTimeOut - выполняет ф-ю с отложеной задержкой-->
+<!--<input type="button" value="Жми" id="test" onclick="f()">-->
+
+<!--<script>-->
+<!--    function f() {-->
+<!--        setTimeout(() => alert('Я буду вызван через 3 сек'), 3000);-->
+<!--    }-->
+<!--</script>-->
+<!-- пример с рекурсией для setTimeOut-->
+
+<!--<script>-->
+<!--    function timer() {-->
+<!--        document.write('Time<br>');-->
+<!--        setTimeout(timer, 1000)-->
+<!--    }-->
+<!--    timer();-->
+<!--    -->
+<!--</script>-->
+
+<!--Электроные часы
+Задача создать электроные часы выводящие данные в формате HH:mm:ss-->
+<!--<h1 id="clock"></h1>-->
+<!--<script>-->
+<!--    let date = new Date();-->
+<!--    let hours = 0;-->
+<!--    let minutes = 0;-->
+<!--    let seconds = 0;-->
+<!--    function timer() {-->
+<!--        date = new Date();-->
+<!--        seconds = date.getSeconds() < 10 ? `0${date.getSeconds()}`: date.getSeconds();-->
+<!--        hours = date.getHours() < 10 ? `0${date.getHours()}`: date.getHours();-->
+<!--        minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}`: date.getMinutes();-->
+<!--        document.querySelector('#clock').innerHTML = `${hours}:${minutes}:${seconds}`;-->
+<!--    }-->
+<!--    setInterval(timer, 1000);-->
+<!--</script>-->
+
+</body>
+</html>
