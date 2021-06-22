@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 5px;
+            height: 50px;
+            background-color: firebrick;
+        }
+    </style>
+</head>
+<body>
+<!--   requestAnimationFrame() - метод для создания оптимизированных анимаций-->
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<div></div>
+<script>
+    let div = document.querySelector('div');
+    let id;
+    div.style.width = div.clientWidth + 'px'; // записываем свойство width
+    function repeat() {
+        div.style.width = parseFloat(div.style.width) * 1.01 + 'px';
+        id = requestAnimationFrame(repeat)
+    }
+    let start = document.querySelector('#start');
+    start.addEventListener('click', () => {
+        id = requestAnimationFrame(repeat);
+    })
+    let stop= document.querySelector('#stop');
+    stop.addEventListener('click', () => {
+        cancelAnimationFrame(id);
+    })
+</script>
+</body>
+</html>
